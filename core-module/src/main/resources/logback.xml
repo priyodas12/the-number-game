@@ -4,10 +4,10 @@
             <pattern>%date [%thread] [%-5level] %logger{40} -%message\n</pattern>
         </encoder>
     </appender>
-    <logger name="io.bootstrap" level="DEBUG"/>
-    <logger name="org.springframework.context" level="DEBUG"/>
+    <logger name="io.bootstrap" level="TRACE"/>
+    <logger name="org.springframework.context" level="TRACE"/>
 
-    <root level="DEBUG">
+    <root level="TRACE">
         <appender-ref ref="STDOUT"/>
     </root>
 </configuration>
