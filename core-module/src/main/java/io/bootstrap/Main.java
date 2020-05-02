@@ -28,6 +28,12 @@ public class Main {
         //log the number
         log.info("number={}",number);
 
+        //get the game bean from context
+        Game game=context.getBean("game",GameImpl.class);
+
+        //reset the game
+        game.reset();
+
         //close context
         context.close();
     }
