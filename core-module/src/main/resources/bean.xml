@@ -6,7 +6,7 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
-    <context:annotation-config/>
+    <context:component-scan base-package="io.bootstrap"></context:component-scan>
     <bean id="numberGenerator" class="io.bootstrap.NumberGeneratorImpl"/>
     <bean id="game" class="io.bootstrap.GameImpl">
         <!--Constructor based-->
