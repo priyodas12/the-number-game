@@ -29,7 +29,7 @@ public class Main {
         log.info("number={}",number);
 
         //get the game bean from context
-        Game game=context.getBean("game",GameImpl.class);
+        Game game=context.getBean(GameImpl.class);
 
         //reset the game
         game.reset();
