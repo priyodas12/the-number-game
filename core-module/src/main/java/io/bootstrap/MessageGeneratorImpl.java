@@ -41,7 +41,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
             return "Not in valid number range!";
         }
         else if(game.getRemainingGuesses()==guessCount){
-            return "waht is your first guess";
+            return "what is your first guess";
         }
         else{
             String direction="LOWER";
