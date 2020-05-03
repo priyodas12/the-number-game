@@ -4,6 +4,7 @@ package io.bootstrap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
@@ -11,13 +12,13 @@ public class Main {
     private static final Logger log= LoggerFactory.getLogger(Main.class);
 
     //configuration
-    private static final String CONFIG_LOCATION="bean.xml";
+    //private static final String CONFIG_LOCATION="bean.xml";
 
     public static void main(String[] args) {
         log.info("debug from Main");
 
         //create context first
-        ConfigurableApplicationContext context=new ClassPathXmlApplicationContext(CONFIG_LOCATION);
+        ConfigurableApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
 
         //get NumberGenerator object from spring
         NumberGenerator ng=context.getBean("numberGenerator",NumberGenerator.class);
