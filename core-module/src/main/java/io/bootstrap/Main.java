@@ -21,7 +21,7 @@ public class Main {
         ConfigurableApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
 
         //get NumberGenerator object from spring
-        NumberGenerator ng=context.getBean("numberGenerator",NumberGenerator.class);
+        NumberGenerator ng=context.getBean(NumberGenerator.class);
 
         //call method to get a random number
         int number=ng.next();
