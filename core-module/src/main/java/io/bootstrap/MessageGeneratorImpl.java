@@ -19,17 +19,37 @@ public class MessageGeneratorImpl implements MessageGenerator {
 
     //postconstruct
     @PostConstruct
-    public void generateGame(){
-        log.debug("generateGame() called!");
+    public void init(){
+        log.debug("bean initialised {}",game);
     }
 
     @Override
     public String getMainMessage() {
-        return "getMainMessage() called!";
+        return "Number is in between "+game.getSmallest()
+                +" and "+game.getBiggest()+" Can u Guess it?";
     }
 
     @Override
     public String getResultMessage() {
-        return "getResultMessage() called!";
+        if(game.isGameWon()){
+            return "you guessed it and number is "+game.getNumber();
+        }
+        else if(game.isGameLost()){
+            return "you lost the game and the number is "+game.getNumber();
+        }
+        else if(!game.isValidNumberRange()){
+            return "Not in valid number range!";
+        }
+        else if(game.getRemainingGuesses()==guessCount){
+            return "waht is your first guess";
+        }
+        else{
+            String direction="LOWER";
+
+            if(game.getGuess()<game.getNumber()){
+                direction="HIGHER";
+            }
+            return direction+" ! you have "+game.getRemainingGuesses()+" guess left!";
+        }
     }
 }
