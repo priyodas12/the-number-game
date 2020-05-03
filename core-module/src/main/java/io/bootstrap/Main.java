@@ -39,9 +39,8 @@ public class Main {
         MessageGeneratorImpl mg=context.getBean(MessageGeneratorImpl.class);
 
         //call both method
-        System.out.println(mg.getMainMessage());
-        System.out.println(mg.getResultMessage());
-
+        log.info("getMainMessage {}",mg.getMainMessage());
+        log.info("getResultMessage {}",mg.getResultMessage());
         //close context
         context.close();
     }
